@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/TitleFragment">
+
     <fragment
         android:id="@+id/TitleFragment"
         android:name="com.example.android.navigation.TitleFragment"
@@ -59,4 +60,5 @@
         android:name="com.example.android.navigation.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+
 </navigation>
