@@ -17,7 +17,14 @@
         android:id="@+id/gameFragment"
         android:name="com.example.android.navigation.GameFragment"
         android:label="GameFragment"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment3"
+            app:destination="@id/gameOverFragment3" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment2"
+            app:destination="@id/gameWonFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/gameOverFragment3"
         android:name="com.example.android.navigation.GameOverFragment"
