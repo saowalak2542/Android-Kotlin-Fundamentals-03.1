@@ -34,7 +34,8 @@ class GameWonFragment : Fragment() {
                 inflater, R.layout.fragment_game_won, container, false)
         binding.nextMatchButton.setOnClickListener{view: View->
             view.findNavController()
-                    .navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())}
+                    .navigate(GameWonFragmentDirections.actionGameWonFragment2ToGameFragment())
+        }
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
         setHasOptionsMenu(true)
@@ -53,12 +54,12 @@ class GameWonFragment : Fragment() {
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.winner_menu, menu)
+        inflater.inflate(R.menu.winner_menu, menu)
         if (null == getShareIntent().resolveActivity(activity!!.packageManager)) {
-            menu?.findItem(R.id.share)?.setVisible(false)
+            menu.findItem(R.id.share)?.setVisible(false)
         }
     }
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item!!.itemId) {
             R.id.share -> shareSuccess()
         }
